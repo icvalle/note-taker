@@ -13,8 +13,10 @@ module.exports = (app) => {
         res.json(true);
     });
 
-    // app.delete('/api/notes/:id', (req, res) => {
-    //     //return all notes but exclude the note where id is equal to req.params.id
-    // });
-
+    app.delete('/api/notes/:id', (req, res) => {
+        const idNote = (element) => element.id === req.params.id;
+        const deleteNote = db.findIndex(idNote);
+        db.splice(deleteNote, 1);
+        res.json(db);
+    });
 };
