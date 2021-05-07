@@ -7,7 +7,7 @@ module.exports = (app) => {
     });
     
     app.post('/api/notes', (req, res) => {
-        const newNote = new Notes(req.body.title, req.body.text)
+        const newNote = new Notes(req.body.title, req.body.text, 1);
         db.push(newNote);
         res.json(true);
     });
