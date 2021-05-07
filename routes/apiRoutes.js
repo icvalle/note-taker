@@ -12,4 +12,9 @@ module.exports = (app) => {
         db.push(newNote);
         res.json(true);
     });
+
+    // app.delete('/api/notes/:id', (req, res) => {
+    //     //return all notes but exclude the note where id is equal to req.params.id
+    // });
+
 };
